@@ -7,8 +7,8 @@ import random
 import streamlit.components.v1 as components
 
 TMDB_API_KEY = "d64c9121ce2ea797ca02e716bf8235a3"
-MOVIE_PICKLE = os.path.join(os.path.dirname(__file__), "movie_dict.pkl")
-SIM_PICKLE = os.path.join(os.path.dirname(__file__), "similarity.pkl")
+MOVIE_PICKLE = os.path.join(os.path.dirname(__file__), "data/movie_dict.pkl")
+SIM_PICKLE = os.path.join(os.path.dirname(__file__), "data/similarity.pkl")
 
 LOGO_URL = "https://user-images.githubusercontent.com/75604769/163835573-52bbb215-2ca0-48ad-b610-57a9aae4750a.jpg"
 BACKGROUND_IMG_URL = "https://editor.analyticsvidhya.com/uploads/76889recommender-system-for-movie-recommendation.jpg"
@@ -172,7 +172,7 @@ def recommend(movie_title, movies, similarity, top_k=10):
 
 st.markdown(f"""
 <div class="movie-navbar">
-    <img src="{LOGO_URL}" class="nav-logo">str
+    <img src="{LOGO_URL}" class="nav-logo">
 </div>
 """, unsafe_allow_html=True)
 
