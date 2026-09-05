@@ -1,116 +1,129 @@
-# 🎬 Movie Stream — Intelligent Movie Recommendation System
+<div align="center">
 
-<p align="center">
-  <strong>Discover your next movie in seconds.</strong><br>
-  A sleek Netflix-inspired movie recommendation app powered by content-based machine learning and TMDB.
-</p>
+# 🎬 Movie Stream
 
-<p align="center">
-  <img src="https://img.shields.io/badge/Python-3.x-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Python">
-  <img src="https://img.shields.io/badge/Streamlit-App-FF4B4B?style=for-the-badge&logo=streamlit&logoColor=white" alt="Streamlit">
-  <img src="https://img.shields.io/badge/ML-Content%20Based-8A2BE2?style=for-the-badge" alt="Machine Learning">
-  <img src="https://img.shields.io/badge/TMDB-API-01B4E4?style=for-the-badge&logo=themoviedatabase&logoColor=white" alt="TMDB">
-</p>
+### Your next movie is one recommendation away.
+
+A cinematic, Netflix-inspired **content-based movie recommendation system** built with Python and Streamlit.
+
+<br>
+
+[![Live Demo](https://img.shields.io/badge/🚀%20LIVE%20DEMO-Movie%20Stream-E50914?style=for-the-badge)](https://moviessystem.streamlit.app/)
+[![GitHub](https://img.shields.io/badge/GitHub-Source%20Code-181717?style=for-the-badge&logo=github)](https://github.com/himanshuaggarwal04380/MoviesSystem)
+[![Python](https://img.shields.io/badge/Python-3.x-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://www.python.org/)
+[![Streamlit](https://img.shields.io/badge/Streamlit-App-FF4B4B?style=for-the-badge&logo=streamlit&logoColor=white)](https://streamlit.io/)
+[![TMDB](https://img.shields.io/badge/TMDB-API-01B4E4?style=for-the-badge&logo=themoviedatabase&logoColor=white)](https://www.themoviedb.org/)
+
+<br>
+
+**🌐 Live:** https://moviessystem.streamlit.app/  
+**💻 Source:** https://github.com/himanshuaggarwal04380/MoviesSystem
+
+</div>
 
 ---
 
 ## 🍿 What is Movie Stream?
 
-**Movie Stream** is a content-based movie recommendation system that helps users find movies similar to a selected title.
+**Movie Stream** is a movie recommendation web application that answers one simple question:
 
-Choose a movie → click **Recommend** → get a curated row of similar movies with posters.
+> **"I liked this movie. What should I watch next?"**
 
-The recommendation engine uses a precomputed **movie similarity matrix**, while the TMDB API is used to retrieve movie posters dynamically.
+Select a movie, press **Recommend**, and the application finds the **10 most similar movies** using a precomputed similarity matrix. Posters are retrieved dynamically through the **TMDB API**, with fallback images used when a poster cannot be loaded.
 
-> **Think of it as:** *"I liked this movie. What should I watch next?"* — answered by machine learning.
+The result is a fast, visual recommendation experience with a dark streaming-platform-inspired interface.
 
 ---
 
-## ✨ Features
+## ✨ What Makes It Special?
 
-| Feature | Description |
+| Feature | What it does |
 |---|---|
-| 🎯 **Smart Recommendations** | Finds movies most similar to your selected title |
-| 🧠 **Content-Based ML** | Uses precomputed similarity scores to rank movies |
-| 🎬 **TMDB Posters** | Fetches high-quality movie posters through TMDB |
-| 🖼️ **Fallback Posters** | Keeps the UI working even when a poster is unavailable |
-| ⚡ **Cached Data** | Streamlit caching reduces repeated data/API work |
-| 🔄 **Loading Spinner** | Built-in Streamlit spinner while recommendations are generated |
-| 🎨 **Netflix-Inspired UI** | Dark cinematic interface with red accent styling |
-| 🖱️ **Interactive Movie Carousel** | Horizontally scroll through recommendations |
-| 📱 **Wide Layout** | Designed for a clean desktop viewing experience |
+| 🎯 **Smart Recommendations** | Finds movies closest to your selected movie |
+| 🧠 **Content-Based ML** | Uses movie similarity rather than random recommendations |
+| ⚡ **Fast Lookup** | Uses a precomputed similarity matrix |
+| 🎬 **TMDB Integration** | Dynamically retrieves movie posters |
+| 🖼️ **Fallback System** | Shows fallback posters when TMDB data is unavailable |
+| 🔄 **Loading Spinner** | Displays an animated Streamlit loader while generating recommendations |
+| 🎨 **Cinematic UI** | Dark background with a streaming-service-inspired design |
+| 🖱️ **Movie Carousel** | Horizontally scroll through recommendations |
+| 💾 **Streamlit Caching** | Avoids unnecessary repeated data/API operations |
+| ☁️ **Live Deployment** | Available online through Streamlit Community Cloud |
 
 ---
 
-## 🖥️ Preview
+## 🚀 Try It Now
 
-> Add your application screenshot here:
+### 🎬 Live Demo
 
-```text
-docs/
-└── screenshot.png
-```
+**👉 [Open Movie Stream](https://moviessystem.streamlit.app/)**
 
-Then replace this section with:
-
-```markdown
-![Movie Stream Screenshot](docs/screenshot.png)
-```
+No Python installation.  
+No setup.  
+Just open the website, select a movie, and discover something new.
 
 ---
 
-## 🧩 How It Works
+## 🖥️ How It Works
 
-The application follows a simple recommendation pipeline:
+The application follows this pipeline:
 
 ```text
-                 ┌────────────────────┐
-                 │   Select a Movie   │
-                 └─────────┬──────────┘
-                           │
-                           ▼
-                 ┌────────────────────┐
-                 │ Find Movie Index   │
-                 └─────────┬──────────┘
-                           │
-                           ▼
-                 ┌────────────────────┐
-                 │ Similarity Matrix  │
-                 └─────────┬──────────┘
-                           │
-                           ▼
-                 ┌────────────────────┐
-                 │ Rank Similar Movies│
-                 └─────────┬──────────┘
-                           │
-                           ▼
-                 ┌────────────────────┐
-                 │ Fetch TMDB Posters │
-                 └─────────┬──────────┘
-                           │
-                           ▼
-              ┌──────────────────────────┐
-              │ 🎬 Recommended Movies    │
-              └──────────────────────────┘
+                     🎬 USER
+                       │
+                       ▼
+              ┌─────────────────┐
+              │  Select a Movie │
+              └────────┬────────┘
+                       │
+                       ▼
+              ┌─────────────────┐
+              │  Find Movie ID  │
+              └────────┬────────┘
+                       │
+                       ▼
+          ┌──────────────────────────┐
+          │  Similarity Matrix      │
+          │  Precomputed ML Scores  │
+          └────────────┬─────────────┘
+                       │
+                       ▼
+              ┌─────────────────┐
+              │ Rank Similarity │
+              │    Scores ↓     │
+              └────────┬────────┘
+                       │
+                       ▼
+               🏆 TOP 10 MOVIES
+                       │
+                       ▼
+          ┌──────────────────────────┐
+          │       TMDB API           │
+          │     Fetch Posters        │
+          └────────────┬─────────────┘
+                       │
+                       ▼
+             🎞️ MOVIE CAROUSEL
 ```
 
-### Recommendation logic
+### Recommendation flow
 
-For the selected movie:
+When a user selects a movie:
 
-1. Locate the movie's index in the movie DataFrame.
-2. Retrieve its corresponding row from the similarity matrix.
-3. Sort all movies by similarity score in descending order.
-4. Skip the selected movie itself.
-5. Return the top 10 similar movies.
-6. Fetch their posters from TMDB when required.
-7. Display the results in an interactive horizontal carousel.
+1. The movie title is located in the dataset.
+2. Its index is obtained.
+3. The corresponding row from the similarity matrix is retrieved.
+4. Movies are sorted by similarity score.
+5. The selected movie itself is skipped.
+6. The top 10 similar movies are selected.
+7. Posters are retrieved from TMDB.
+8. Results are displayed in a horizontal carousel.
 
 ---
 
 ## 🧠 Recommendation Engine
 
-The core recommendation function is based on a precomputed similarity matrix.
+The core recommendation system uses a **precomputed similarity matrix**.
 
 Conceptually:
 
@@ -126,32 +139,93 @@ distances = sorted(
 )
 ```
 
-The system then selects the highest-scoring movies:
+The highest similarity scores represent movies that are considered most similar to the selected title.
+
+### Why precompute the similarity?
+
+Instead of calculating movie-to-movie similarity every time a user clicks **Recommend**, the similarity matrix is generated beforehand and stored as:
 
 ```text
-Selected Movie
-      │
-      ▼
-Similarity Scores
-      │
-      ▼
-Sort ↓
-      │
-      ▼
-Top 10
-      │
-      ▼
-Recommendations
+data/similarity.pkl
 ```
 
-This approach makes recommendation lookup fast because the expensive similarity computation has already been performed and stored.
+This allows the application to perform recommendation lookup quickly at runtime.
+
+---
+
+## 🎨 User Experience
+
+Movie Stream is designed around a simple interaction:
+
+```text
+        🎬 Movie Stream
+
+     Unlimited movies,
+     TV shows, and more.
+
+ ┌─────────────────────────────────┐
+ │ Search / Select a movie         │
+ └─────────────────────────────────┘
+
+                    ┌──────────────┐
+                    │ Recommend > │
+                    └──────────────┘
+
+          ✨ More Like This
+
+ ┌───────┐ ┌───────┐ ┌───────┐ ┌───────┐ ┌───────┐
+ │       │ │       │ │       │ │       │ │       │
+ │ 🎬    │ │ 🎬    │ │ 🎬    │ │ 🎬    │ │ 🎬    │
+ │Poster │ │Poster │ │Poster │ │Poster │ │Poster │
+ │       │ │       │ │       │ │       │ │       │
+ └───────┘ └───────┘ └───────┘ └───────┘ └───────┘
+```
+
+The interface includes:
+
+- Netflix-inspired dark styling
+- Red recommendation button
+- Movie selector
+- Animated loading spinner
+- Horizontal recommendation carousel
+- Hover effects on movie cards
+- TMDB poster integration
+- Fallback posters for failed requests
+
+---
+
+## 🛠️ Tech Stack
+
+### Frontend / Application
+
+- 🐍 **Python**
+- 🎈 **Streamlit**
+- 🐼 **Pandas**
+- 🌐 **Requests**
+- 🌐 HTML/CSS embedded inside the Streamlit interface
+
+### Machine Learning / Data
+
+- 🧠 Content-based recommendation
+- 📊 Precomputed movie similarity matrix
+- 📦 Pickle serialization
+
+### External API
+
+- 🎬 **TMDB API** — used for movie poster information
+
+### Deployment
+
+- ☁️ **Streamlit Community Cloud**
+- 🐙 **GitHub**
+- 📦 **Git LFS**
 
 ---
 
 ## 📁 Project Structure
 
 ```text
-MovieSystem/
+MoviesSystem/
 │
 ├── 📂 data/
 │   ├── movie_dict.pkl
@@ -159,56 +233,149 @@ MovieSystem/
 │   └── similarity.pkl
 │
 ├── 📂 .streamlit/
-│   └── secrets.toml        # Local only — do NOT commit
+│   └── secrets.toml          # Local only — never commit
 │
-├── 📄 app.py
-├── 📄 requirements.txt
-├── 📄 README.md
-├── 📄 .gitignore
-├── 📄 .gitattributes
-└── 📂 .venv/               # Local only
+├── 📄 app.py                 # Main Streamlit application
+├── 📄 requirements.txt       # Python dependencies
+├── 📄 README.md              # Project documentation
+├── 📄 .gitignore             # Ignored files/secrets
+├── 📄 .gitattributes         # Git LFS configuration
+│
+└── 📂 .venv/                 # Local virtual environment
 ```
 
-### Important data files
+### Data files
 
 | File | Purpose |
 |---|---|
-| `movie_dict.pkl` | Serialized movie data used by the application |
+| `movie_dict.pkl` | Serialized movie data |
 | `movies.pkl` | Movie dataset |
 | `similarity.pkl` | Precomputed movie-to-movie similarity matrix |
 
-> `similarity.pkl` is a large file, so this project uses **Git LFS** for version control.
+> `similarity.pkl` is a large file and is stored using **Git LFS**.
 
 ---
 
-## 🛠️ Tech Stack
+## ⚡ Performance
 
-### Application
+The application uses Streamlit caching:
 
-- 🐍 **Python**
-- 🎈 **Streamlit**
-- 🐼 **Pandas**
-- 🌐 **Requests**
+```python
+@st.cache_data(show_spinner=False)
+```
 
-### Machine Learning / Data
+Caching is used for:
 
-- Content-based recommendation
-- Precomputed similarity matrix
-- Serialized `.pkl` data
+- Loading the movie dataset
+- Loading the similarity matrix
+- Fetching movie posters
 
-### External Service
+This reduces repeated processing when Streamlit reruns the application.
 
-- 🎬 **TMDB API** for movie poster metadata
+Poster requests also use:
+
+```python
+timeout=2
+```
+
+so a slow/unavailable TMDB request does not unnecessarily block the application.
+
+If TMDB fails, the application automatically falls back to predefined poster images.
 
 ---
 
-## 🚀 Run the Project Locally
+## 🔐 API Security
+
+The TMDB API key should **never be stored directly inside `app.py`**.
+
+Use Streamlit secrets:
+
+```python
+TMDB_API_KEY = st.secrets["TMDB_API_KEY"]
+```
+
+Local development:
+
+```text
+.streamlit/
+└── secrets.toml
+```
+
+```toml
+TMDB_API_KEY = "YOUR_TMDB_API_KEY"
+```
+
+Make sure `.gitignore` contains:
+
+```gitignore
+.venv/
+.idea/
+.streamlit/secrets.toml
+```
+
+### ⚠️ Important
+
+If an API key has ever been exposed in a public repository, rotate/revoke it and create a new one.
+
+---
+
+## 📦 Git LFS
+
+The recommendation model contains a large similarity matrix:
+
+```text
+data/similarity.pkl
+```
+
+Because it is larger than GitHub's standard 100 MB file limit, the project uses **Git Large File Storage (Git LFS)**.
+
+Initialize LFS:
+
+```bash
+git lfs install
+```
+
+Track the file:
+
+```bash
+git lfs track "data/similarity.pkl"
+```
+
+Commit and push:
+
+```bash
+git add .
+git commit -m "Update recommendation model"
+git push
+```
+
+Check tracked LFS files:
+
+```bash
+git lfs ls-files
+```
+
+Expected:
+
+```text
+data/similarity.pkl
+```
+
+If cloning the project and the large file appears as an LFS pointer:
+
+```bash
+git lfs pull
+```
+
+---
+
+## 💻 Run Locally
 
 ### 1. Clone the repository
 
 ```bash
-git clone <YOUR_GITHUB_REPOSITORY_URL>
-cd MovieSystem
+git clone https://github.com/himanshuaggarwal04380/MoviesSystem.git
+cd MoviesSystem
 ```
 
 ### 2. Create a virtual environment
@@ -233,7 +400,7 @@ source .venv/bin/activate
 pip install -r requirements.txt
 ```
 
-### 4. Configure your TMDB API key
+### 4. Configure TMDB
 
 Create:
 
@@ -247,21 +414,13 @@ Add:
 TMDB_API_KEY = "YOUR_TMDB_API_KEY"
 ```
 
-The application reads it using:
-
-```python
-TMDB_API_KEY = st.secrets["TMDB_API_KEY"]
-```
-
-**Never commit `secrets.toml` to GitHub.**
-
-### 5. Start the application
+### 5. Start Movie Stream
 
 ```bash
 streamlit run app.py
 ```
 
-Then open the local Streamlit URL shown in your terminal, usually:
+Open:
 
 ```text
 http://localhost:8501
@@ -269,277 +428,160 @@ http://localhost:8501
 
 ---
 
-## 🔐 Security
+## ☁️ Deployment
 
-The TMDB API key should **never be hardcoded** in `app.py`.
+This project is already deployed using **Streamlit Community Cloud**.
 
-Use Streamlit secrets:
+### Live application
 
-```python
-TMDB_API_KEY = st.secrets["TMDB_API_KEY"]
-```
+👉 **https://moviessystem.streamlit.app/**
 
-And keep this file out of Git:
+The deployment uses:
 
 ```text
-.streamlit/secrets.toml
+GitHub Repository
+       │
+       ▼
+Streamlit Community Cloud
+       │
+       ├── app.py
+       ├── requirements.txt
+       ├── data/
+       └── Git LFS
+              │
+              ▼
+        🌍 Public Web App
 ```
 
-The `.gitignore` should include:
-
-```gitignore
-.venv/
-.idea/
-.streamlit/secrets.toml
-```
-
-If an API key has previously been committed to a public repository, **rotate/revoke that key** and replace it with a new one.
+The TMDB API key is supplied through Streamlit's secret-management system rather than committed to the repository.
 
 ---
 
-## 📦 Git LFS
+## 🧪 Example
 
-The project contains a large similarity matrix:
-
-```text
-similarity.pkl
-```
-
-Because the file is larger than GitHub's normal 100 MB per-file limit, it should be tracked with Git LFS.
-
-Initialize Git LFS:
-
-```bash
-git lfs install
-```
-
-Track the similarity matrix:
-
-```bash
-git lfs track "data/similarity.pkl"
-```
-
-Then:
-
-```bash
-git add .
-git commit -m "Add movie recommendation data"
-git push
-```
-
-Verify:
-
-```bash
-git lfs ls-files
-```
-
-You should see:
+Suppose the user selects:
 
 ```text
-data/similarity.pkl
+Interstellar
+```
+
+The application:
+
+```text
+Interstellar
+     │
+     ▼
+Similarity Matrix
+     │
+     ▼
+Rank Movies
+     │
+     ├── Movie A
+     ├── Movie B
+     ├── Movie C
+     ├── Movie D
+     └── ...
+     │
+     ▼
+Top 10 Recommendations
+     │
+     ▼
+TMDB Posters
+     │
+     ▼
+🎬 Movie Carousel
 ```
 
 ---
 
-## ⚡ Performance
+## 🛡️ Error Handling
 
-The application uses Streamlit caching:
+Movie Stream is designed to degrade gracefully.
 
-```python
-@st.cache_data(show_spinner=False)
-```
+### Missing model/data files
 
-This is used for:
-
-- Loading the serialized movie data
-- Fetching movie posters
-
-Caching helps avoid unnecessary repeated work when Streamlit reruns the application.
-
-Poster requests also use a short timeout:
-
-```python
-requests.get(..., timeout=2)
-```
-
-If TMDB is unavailable, the application falls back to a local fallback-image list instead of breaking the recommendation page.
-
----
-
-## 🎨 UI Experience
-
-Movie Stream uses a cinematic dark interface inspired by modern streaming platforms.
-
-### Main experience
-
-```text
-🎬 Movie Stream
-
-Unlimited movies,
-TV shows, and more.
-
-[ Search for a movie                         ] [ Recommend > ]
-
-More Like This
-
-┌────────┐ ┌────────┐ ┌────────┐ ┌────────┐ ┌────────┐
-│ Poster │ │ Poster │ │ Poster │ │ Poster │ │ Poster │
-│        │ │        │ │        │ │        │ │        │
-└────────┘ └────────┘ └────────┘ └────────┘ └────────┘
-```
-
-The recommendation section uses a horizontally scrollable carousel so the results remain compact and visually focused.
-
----
-
-## 🔄 Error Handling
-
-The app is designed to remain usable when external resources fail.
-
-### Missing data files
-
-The application checks for:
+The app checks for required files such as:
 
 ```text
 data/movie_dict.pkl
 data/similarity.pkl
 ```
 
-and stops with a clear error if they are missing.
+and displays an error instead of silently failing.
 
-### TMDB unavailable
+### TMDB poster unavailable
 
-If the TMDB API fails or a movie has no poster:
+If:
+
+- the API request fails,
+- the movie has no poster,
+- the API key is unavailable, or
+- the request times out,
+
+the application displays a fallback image.
+
+### No recommendations
+
+If the selected title cannot be found in the dataset, the application displays:
 
 ```text
-TMDB
-  │
-  ├── Poster found ──► Display TMDB poster
-  │
-  └── Error/missing ─► Display fallback poster
+No recommendations found.
 ```
-
-This prevents poster failures from crashing the application.
-
----
-
-## 🧪 Example Usage
-
-1. Launch the app.
-2. Select a movie such as **John Carter**.
-3. Click **Recommend >**.
-4. The application calculates the closest movies using the similarity matrix.
-5. A loading spinner is displayed while recommendations are being generated.
-6. The top 10 recommendations appear with movie posters.
 
 ---
 
 ## 🔮 Future Improvements
 
-Possible upgrades for the next version:
+The current system can be expanded with:
 
-- 🔎 Add a real movie search bar
-- ⭐ Show ratings and release years
-- 📝 Display movie descriptions
-- 🎭 Add genre and cast information
-- 🎞️ Add trailers using TMDB/YouTube metadata
-- ❤️ Add favorites/watchlist functionality
-- 👤 Add user profiles
-- 📊 Add recommendation explanations
-- 🤖 Experiment with hybrid recommendation models
-- 📱 Improve mobile responsiveness
-- ☁️ Deploy the application online
-- 🗄️ Replace local pickle files with a scalable database/object store
-
----
-
-## 🌐 Deployment
-
-The application can be deployed to a cloud platform that supports Streamlit.
-
-Before deployment:
-
-- Add the required TMDB secret through the platform's secret-management system.
-- Make sure the model/data files are accessible.
-- Configure Git LFS if the deployment environment retrieves the large similarity matrix from Git.
-- Never expose your API key in source code.
+- 🔎 Fuzzy movie search
+- ⭐ Movie ratings
+- 📅 Release years
+- 🎭 Genres and cast
+- 📝 Movie descriptions
+- 🎞️ Trailers
+- ❤️ Watchlist / Favorites
+- 👤 User profiles
+- 📊 Recommendation explanations
+- 🤖 Hybrid recommendation algorithms
+- 📱 Improved mobile UI
+- 🗄️ Scalable database/model storage
+- 📈 Recommendation analytics
 
 ---
 
-## ⚠️ Troubleshooting
-
-### `ModuleNotFoundError`
-
-Install dependencies:
-
-```bash
-pip install -r requirements.txt
-```
-
-### `Missing movie_dict.pkl`
-
-Make sure:
+## 📌 Project Status
 
 ```text
-data/movie_dict.pkl
-```
-
-exists relative to `app.py`.
-
-### `Missing similarity.pkl`
-
-Make sure:
-
-```text
-data/similarity.pkl
-```
-
-exists and has been downloaded correctly through Git LFS.
-
-If Git LFS is installed:
-
-```bash
-git lfs pull
-```
-
-### Posters are not appearing
-
-Check:
-
-- Internet connection
-- TMDB API key
-- TMDB API availability
-- Movie IDs in the dataset
-
-The app should use fallback images when poster retrieval fails.
-
----
-
-## 📜 License
-
-Add your preferred license here.
-
-For example, if you choose MIT:
-
-```text
-MIT License
+🟢 Application        LIVE
+🟢 Recommendation    Working
+🟢 TMDB Integration   Working
+🟢 GitHub Repository  Public
+🟢 Git LFS            Configured
+🟢 Cloud Deployment   Active
 ```
 
 ---
 
 ## 👨‍💻 Author
 
-**Himanshu Aggarwal**
+### Himanshu Aggarwal
 
-Built as a machine-learning movie recommendation project with Python and Streamlit.
+Built with Python, Streamlit, machine learning, and a little love for movies. 🎬
+
+**Project:** [MoviesSystem on GitHub](https://github.com/himanshuaggarwal04380/MoviesSystem)  
+**Live Demo:** [Movie Stream](https://moviessystem.streamlit.app/)
 
 ---
 
-<p align="center">
-  🎬 <strong>Movie Stream</strong><br>
-  <i>Pick a movie. Press recommend. Find your next watch.</i>
-</p>
+<div align="center">
 
-<p align="center">
-  ⭐ If you found this project interesting, consider starring the repository!
-</p>
+### 🍿 Pick a movie.  
+### ⚡ Get recommendations.  
+### 🎬 Find your next watch.
+
+<br>
+
+**⭐ If you like the project, consider starring the repository!**
+
+</div>
