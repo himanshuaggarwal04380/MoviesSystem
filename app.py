@@ -6,7 +6,7 @@ import pandas as pd
 import random
 import streamlit.components.v1 as components
 
-TMDB_API_KEY = "d64c9121ce2ea797ca02e716bf8235a3"
+TMDB_API_KEY = st.secrets["TMDB_API_KEY"]
 MOVIE_PICKLE = os.path.join(os.path.dirname(__file__), "data/movie_dict.pkl")
 SIM_PICKLE = os.path.join(os.path.dirname(__file__), "data/similarity.pkl")
 
