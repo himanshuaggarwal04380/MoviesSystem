@@ -132,22 +132,38 @@ def load_pickles():
 
     return movies.reset_index(drop=True), similarity
 
+def get_fallback_image(movie_id):
+    return FALLBACK_IMAGES[int(movie_id) % len(FALLBACK_IMAGES)]
+
 @st.cache_data(show_spinner=False)
 def fetch_poster(movie_id):
+    """Fetch a movie poster from TMDB with a deterministic fallback."""
+
+    fallback = get_fallback_image(movie_id)
+
     if not TMDB_API_KEY:
-        return random.choice(FALLBACK_IMAGES)
+        return fallback
+
     try:
         url = f"https://api.themoviedb.org/3/movie/{movie_id}"
-        params = {"api_key": TMDB_API_KEY, "language": "en-US"}
-        r = requests.get(url, params=params, timeout=2)
-        r.raise_for_status()
-        data = r.json()
-        poster_path = data.get("poster_path")
+        params = {
+            "api_key": TMDB_API_KEY,
+            "language": "en-US"
+        }
+
+        response = requests.get(url, params=params, timeout=2)
+        response.raise_for_status()
+
+        poster_path = response.json().get("poster_path")
+
         if poster_path:
-            return "https://image.tmdb.org/t/p/w500" + poster_path
-        return random.choice(FALLBACK_IMAGES)
-    except:
-        return random.choice(FALLBACK_IMAGES)
+            return f"https://image.tmdb.org/t/p/w500{poster_path}"
+
+    except requests.RequestException:
+        pass
+
+    return fallback
+
 
 def recommend(movie_title, movies, similarity, top_k=10):
     if movie_title not in movies["title"].values:
@@ -198,8 +214,17 @@ with col2:
     show_recommendations = st.button("Recommend >")
 
 if show_recommendations:
+
+    with st.spinner("Finding similar movies..."):
+
+        names, posters = recommend(
+            selected_movie,
+            movies,
+            similarity,
+            top_k=10
+        )
+
     st.write("### More Like This")
-    names, posters = recommend(selected_movie, movies, similarity, top_k=10)
 
     if not names:
         st.warning("No recommendations found.")
