@@ -1,6 +1,6 @@
 <div align="center">
 
-# 🎬 Movie Stream
+# 🎬 Movie System
 
 ### Your next movie is one recommendation away.
 
