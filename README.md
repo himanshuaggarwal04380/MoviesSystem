@@ -83,8 +83,8 @@ The application follows this pipeline:
                        │
                        ▼
           ┌──────────────────────────┐
-          │  Similarity Matrix      │
-          │  Precomputed ML Scores  │
+          │  Similarity Matrix       │
+          │  Precomputed ML Scores   │
           └────────────┬─────────────┘
                        │
                        ▼
